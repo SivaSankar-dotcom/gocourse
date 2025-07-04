@@ -1,0 +1,15 @@
+package main
+
+function main(){
+	// 1.PascalCase
+	//Eg. CalculateArea , UserInfo, NewHTTPRequest
+	//Structs. interfaces, enums
+
+	// snake_case
+	//Eg. user_id,first_name,http_request
+
+	//UPPERCASE
+	//Use case in constants
+	// misedcase
+	//Eg. javaScript, htmlDocument, inValid
+}
