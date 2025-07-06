@@ -1,0 +1,28 @@
+package basiscs
+
+import "fmt"
+
+func main() {
+	var a float64 = 10
+	var b float64 = 3
+	var result float64
+
+	result = a + b
+	fmt.Println("Addition:", result)
+
+	result = a - b
+	fmt.Println("Subtraction:", result)
+
+	result = a * b
+	fmt.Println("Multiplication:", result)
+
+	result = a / b
+	fmt.Println("divition:", result)
+
+	// result = a % b
+	// fmt.Println("remainder", result)
+
+	const p float64 = 22 / 7.0
+	println(p)
+
+}
