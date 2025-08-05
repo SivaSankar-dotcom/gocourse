@@ -1,0 +1,64 @@
+package main
+
+import (
+	"fmt"
+	"slices"
+)
+
+
+func main() {
+	// var  SliceName[]Elementtype
+
+	// var numbers[]int
+	// var numbers1= []int{1,2,3}
+
+	// numbers2 := []int {9,8,7}
+
+	// slice := make([]int,5)
+
+	// var numbers []int
+	// var numbers1 = []int{1,2,3}
+
+	// numbers2 := []int{9,8,7}
+
+	// slice :=make([]int,5)
+
+	a :=[5]int{5,6,7,8,9}
+	slice1 := a[1:4]
+
+	fmt.Println(slice1)
+
+	slice1 = append(slice1, 10,11)
+	fmt.Println(slice1)
+
+	sliceCopy :=make([]int,len(slice1))
+	copy(sliceCopy, slice1)
+
+	fmt.Println("Slicecopy:",sliceCopy)
+
+	// var nilslice []int
+
+	for i, v := range slice1{
+		fmt.Println(i,v)
+	}
+	fmt.Println("Element at index 3 of slice1",slice1[3])
+
+	slice1[3]=50
+	fmt.Println("Element at index 3 of slice1",slice1[3])
+
+
+	if slices.Equal(slice1,sliceCopy){
+		fmt.Print("slice1 is equal to sliceCopy")
+	}
+    var i int
+	twoD := make([][]int,3)
+	for i=0;i<len(twoD);i++{
+		innerlen := i+1
+		twoD[i] = make([]int, innerlen)
+		for j:=0;j<innerlen;j++{
+			twoD	[i][j]=i+j
+		}
+	}
+fmt.Println(twoD)
+
+}
