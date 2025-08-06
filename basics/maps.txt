@@ -1,0 +1,72 @@
+package main
+import "fmt"
+import "maps"
+func main(){
+	//var mapVariable map[keytype]valueType
+
+	// mapVariable =make(map[])
+	// mapVariable = map[keytype]valueType{
+	// 	key1: value1,
+	// 	key2: value2
+
+	myMap := make(map[string]int)
+
+	fmt.Println(myMap)
+
+	myMap["key1"] = 1
+
+	fmt.Println(myMap)
+
+	myMap["code"] = 2
+
+	fmt.Println(myMap)
+
+	delete(myMap,"key1")
+
+	fmt.Println(myMap)
+
+	myMap["key1"] = 1
+	myMap["key2"] = 2
+	myMap["key3"] = 3
+
+	// clear(myMap)
+	// fmt.Println(myMap)
+
+	_, ok := myMap["key1"]
+	// fmt.Println(value)
+	fmt.Println("the value associated with key1: ",ok)
+
+
+	myMap2 := map[string]int{"a":1,"b":2}
+	fmt.Println(myMap2)
+
+	myMap3 := map[string]int{"a":1,"b":2}
+
+	if maps.Equal(myMap3,myMap2){
+		fmt.Println("Map1 and Map2 are equal")
+	}
+
+	for _,v := range myMap3{
+		fmt.Println(v)
+	}
+
+	var myMap4 map[string]string
+
+	if myMap4 == nil{
+		fmt.Println("The map is initialized to nil value.")
+
+	}else{
+		fmt.Println("The map is not intialized to nil value")
+	}
+	myMap4 = make(map[string]string)
+	myMap4["key"] = "value"
+	fmt.Println(myMap4)
+
+	fmt.Println("mymap4 length is ",len(myMap4))
+
+	
+	}
+	
+
+	
+

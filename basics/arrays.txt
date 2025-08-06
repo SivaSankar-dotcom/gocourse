@@ -3,7 +3,7 @@ package basics
 import "fmt"
 
 
-func main() {
+func basics() {
 	var numbers[5]int 
 	fmt.Println(numbers)
 
