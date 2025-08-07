@@ -1,0 +1,47 @@
+package main
+
+import "fmt"
+
+
+func main() {
+// 	// func <name>(parameters  list) returnType{
+// 	// code block
+// 	// return value
+// 	// }
+
+// 	// sum:=add(1,2)
+// 	fmt.Println(add(1,2))
+// 	greet := func(){
+// 		fmt.Println("hello anonymous function")
+// 	}
+// 	greet()
+// 	operation := add
+// 	result := operation(3,5)
+// 	fmt.Println(result)
+	// passing an fuction as argument
+	result := applyOpreation(5,3,add)
+	fmt.Println("5+3 is",result)
+
+	//  returning and using a function
+	multiplyby2:= createMultiplier(2)
+	fmt.Println("6 * 2+",multiplyby2(6))
+}
+func add(a, b int)int{
+	return a+b
+}	
+
+// returning and using a function
+multiplyby2:= createMultiplier(2)
+fmt.Prinl
+
+// function that takes a function as argument
+func applyOpreation(x int,y int ,opreation func(int,int) int) int{
+	return opreation(x,y)
+}
+
+// function that returns a function
+func createMultiplier(factor(int))func(int) int{
+	return func(x int) int{
+		return x*factor
+	}
+}
