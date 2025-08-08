@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+
+func main() {
+	process()
+}
+	
+
+func process(){
+	defer fmt.Println("Frist deferred statement executed")
+	defer fmt.Println("Decond deferred statement executed")
+	defer fmt.Println("Thrid deferred statement executed")
+	fmt.Println("Normal execution statement0")
+}
+
