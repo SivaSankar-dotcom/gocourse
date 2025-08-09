@@ -1,0 +1,27 @@
+package main
+
+import "fmt"
+
+
+func main() {
+	fmt.Println(factorial(5))
+	fmt.Println(factorial(10))
+	fmt.Println(sum(5))
+}
+
+func factorial(n int) int{
+	// Base case: factorial of 0 is 1
+	if n == 0{
+		return 1
+	}
+	// recursive case of n is n*factorial(n-10)
+	return n * factorial(n-1)
+}
+
+func sum(n int) int{
+	// Base case whem digit is 0
+	if n==0{
+		return 0
+	}
+	return n+sum(n-1)
+}
