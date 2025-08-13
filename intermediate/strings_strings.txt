@@ -1,0 +1,43 @@
+package main
+
+import (
+	"fmt"
+	"unicode/utf8"
+)
+
+
+func main() {
+	message := "Hello, \nGo"
+	message1 := "Hello, \tGo"
+	message2 := "Hello, \rGo!"
+	rawmessage := `Hello, \nGo`
+
+
+	fmt.Println(message)
+	fmt.Println(message1)
+	fmt.Println(message2)
+	fmt.Println(rawmessage)
+
+	fmt.Println("Length of raw message variable is",len(rawmessage))
+
+	fmt.Println("The first character in message var is",message[0])
+
+	greeting := "Hello"
+	name := "Alice"
+	fmt.Println(greeting + name)
+
+	str1 := "Apple"
+	str2 := "banana"
+	str3 := "app"
+	fmt.Println(str1<str2)
+	fmt.Println(str3<str1)
+
+	for i,char := range message{
+		fmt.Printf("character at index %d is %c \n",i,char)
+	}
+
+	fmt.Println("Rune count:",utf8.RuneCountInString(greeting) )
+
+	greetingWithName := greeting+name
+	fmt.Println(greetingWithName)
+}
