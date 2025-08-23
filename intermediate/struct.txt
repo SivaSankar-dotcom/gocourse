@@ -1,0 +1,65 @@
+package main
+
+import (
+	"fmt"
+	// "structs"
+)
+type person struct {
+		firstName string
+		lastName  string
+		age       int
+		adress Address
+		PhoneHomeCell
+}
+
+type Address struct{
+	city string
+	country string
+}
+
+func (p person) fullName() string{
+	return p.firstName + "" + p.lastName
+}
+
+func (p person) incrementAgeByOne(){
+	p.age++
+}
+type PhoneHomeCell struct{
+	home string
+	cell string
+}
+
+func main() {
+	p := person{
+		firstName: "John",
+		lastName: "sankar",
+		age: 19,
+		adress: Address{
+			city: "london",
+			country: "uk",
+		},
+		PhoneHomeCell : PhoneHomeCell{
+			home : "45678945131",
+			cell : "25698746121",
+		},
+	}
+	p1 := person{
+		lastName: "danny",
+		age: 12,
+	}
+	p1.adress.city = "New York"
+	p1.adress.country = "USA"
+	fmt.Println(p.firstName)
+	fmt.Println(p1.firstName)
+
+	// Anonymous Structs
+	user := struct{
+		username string
+		email string
+	}{
+		username: "username0123",
+		email: "pseudoemail@example.com",
+	}
+	fmt.Println(user.username)
+}
+
