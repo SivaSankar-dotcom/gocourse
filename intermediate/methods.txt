@@ -1,0 +1,45 @@
+package main
+
+import "fmt"
+type shape struct{
+	Rectange
+}
+type Rectange struct{
+	length float64
+	width float64
+}	
+type Circle struct{
+	radius float64
+}
+// Method with value receiver
+func (r Rectange) Area() float64{
+	return r.length* r.width
+}
+func (c Circle) Carea() float64{
+	return 3.14*c.radius*c.radius
+}
+
+// Method with pointer reciver
+func (r *Rectange) Scale(factor float64){
+	r.length *= factor
+	r.width *= factor
+}
+func main() {
+	rect := Rectange{
+		length:10,
+		width: 9,}
+	area:=rect.Area()
+	fmt.Println("Area of rectangle with width 9 and length 10 is",area)
+	cir:=Circle{
+		radius: 5,
+	}
+	carea:=cir.Carea()
+	fmt.Println("Area of circle for r=5 is",carea)
+	rect.Scale(2)
+	area = rect.Area()
+	println("Area of rectangle with factor of 2 is",area)
+	s := shape{Rectange: Rectange{length: 10, width: 9}}
+	fmt.Println(s.Area())
+	fmt.Println(s.Rectange.Area())
+
+}
