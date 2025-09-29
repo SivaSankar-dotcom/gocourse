@@ -1,0 +1,71 @@
+package main
+
+import (
+	"fmt"
+	"regexp"
+	"strconv"
+	"strings"
+	"unicode/utf8"
+)
+
+
+func main() {
+	// string conversion
+	num:=10
+	st:=strconv.Itoa(num)
+	fmt.Println(st)
+
+	// strings splitting
+	fruits :="apple,orange,banana"
+	parts := strings.Split(fruits,",")
+	fmt.Println(parts)
+	partsa:="apple-orange-banana"
+	fmt.Println(strings.Split(partsa,"-"))
+
+	countries:= []string{"Germany","France","Italy"}
+	joined := strings.Join(countries,",")
+	fmt.Println(joined)
+
+	str:="Go is the future"
+	
+	fmt.Println(strings.Contains(str,"Go"))
+
+	replaced:= strings.Replace(str,"Go","Golang",1)
+	fmt.Println(replaced)
+
+	fmt.Println(strings.Repeat("foo",3))
+	fmt.Println(strings.HasPrefix("Hello","He"))
+	fmt.Println(strings.HasSuffix("Golang","ang"))
+
+	str2:="H 1 ello, 123 Go !"
+	re:=regexp.MustCompile(`\d+`)
+	matches := re.FindAllString(str2,-1)
+	fmt.Println(matches)
+
+	fmt.Println(utf8.RuneCountInString(str2))
+
+	// String Builder
+	var builder strings.Builder
+
+	// Write some strings
+	builder.WriteString("Hello")
+	builder.WriteString(", ")
+	builder.WriteString("world!")
+
+	// Convert builder to a string
+	result := builder.String()
+	fmt.Println(result)
+
+	// Using Writerune to add a character
+	builder.WriteRune(' ')
+	builder.WriteString("How are you")
+
+	result=builder.String()
+	fmt.Println(result)
+
+	// Reset the builder
+	builder.Reset()
+	builder.WriteString("Starting fresh!")
+	result = builder.String()
+	fmt.Println(result)
+}

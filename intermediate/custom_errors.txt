@@ -1,0 +1,29 @@
+package main
+
+import "fmt"
+
+type customErrors struct{
+	code int
+	message string
+}
+
+func (m *customErrors) Error() string{
+	return fmt.Sprintf("Code %d :Error: %s",m.code,m.message)
+}
+
+func returnsomething() error{
+	return &customErrors{
+		code:500,
+		message: "Error is error",
+	}
+}
+
+func main() {
+	err:=returnsomething()
+	if err!=nil{
+		fmt.Println(err)
+		return
+	}
+	fmt.Println("Operation completed sucessfully")
+
+}
