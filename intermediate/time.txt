@@ -1,0 +1,13 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println(time.Now())
+	s, _ := time.Parse("2006-01-02", "2034-04-04")
+	fmt.Println(s)
+
+}

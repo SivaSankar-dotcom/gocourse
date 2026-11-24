@@ -1,0 +1,20 @@
+package main
+
+import (
+	"fmt"
+	"regexp"
+)
+
+
+func main() {
+	 
+	// re := regexp.MustCompile(`[a-zA-z0-9@+./*]+[@a-zA-Z0-9.]+`)
+	// email1:="sivasankargmail.com"
+	// fmt.Println(re.MatchString(email1))
+
+	// datee:= regexp.MustCompile(`(\d{4})-(\d{2})-(\d{2})`)
+	// date1:="2024-09-03"
+	// submatch:=datee.FindStringSubmatch(date1)
+	// fmt.Println(submatch)
+	// fmt.Println(submatch[0])
+}

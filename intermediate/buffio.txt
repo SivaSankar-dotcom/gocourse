@@ -1,0 +1,33 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+
+func main() {
+	reader:=bufio.NewReader(strings.NewReader("Na aducha athiradid a"))
+	data:=make([]byte,20)
+	read,err:=reader.Read(data)
+	if err!=nil{
+		fmt.Println(err)
+	}
+	fmt.Printf("Total count: %d data: %s \n",read,data[:20])
+
+	read1,err:=reader.ReadString('c')
+	fmt.Println(read1)
+
+	writer:=bufio.NewWriter(os.Stdout)
+
+	
+
+	data:=[]byte("Hello! da kanna")
+	write,err:=writer.Write(data)
+	if err!=nil{
+		fmt.Println(err)
+	}
+	fmt.Printf("total number of bytes written is %d \n",write)
+	writer.Flush()
+}

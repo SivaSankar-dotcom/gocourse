@@ -1,0 +1,17 @@
+package main
+
+import (
+	"fmt"
+	"net/url"
+)
+func main() {
+	rawurl:="https://shop.com:443/phones?brand=apple&sort=price#reviews"
+	parsedurl,err:= url.Parse(rawurl)
+	if err!=nil{
+		fmt.Println(err)
+	}
+	fmt.Println(parsedurl)
+
+	
+
+}
